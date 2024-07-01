@@ -22,4 +22,3 @@
 ```
 
 - Once you have added the db config as listed above, go to the src folder and execute `npx seqelize db:create` 
-```
