@@ -45,9 +45,9 @@ class CityService{ //issue, everytime I'll create city service a new city reposi
         }
     }
 
-    async getAllCities(){
+    async getAllCities(filter){
         try {
-            const cities=await this.cityRepository.getAllCities();
+            const cities=await this.cityRepository.getAllCities({name:filter.name});
             return cities;
         } catch (error) {
             console.log('Something went wrong at service layer');
