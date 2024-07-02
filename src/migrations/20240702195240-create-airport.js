@@ -24,7 +24,7 @@ module.exports = {
           key: 'id', //key of that model which will be foreign key here
           as: 'cityId',
         },
-        allowNull:false
+        allowNull:false 
       },
       createdAt: {
         allowNull: false,
