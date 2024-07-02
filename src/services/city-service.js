@@ -1,8 +1,8 @@
 const {CityRepository} = require('../repository/index');
 
-class CityService{
+class CityService{ //issue, everytime I'll create city service a new city repository object will be creeated how to resolve it
     constructor(){
-        this.cityRepository= new CityRepository();
+        this.cityRepository= new CityRepository(); //doing this inorder to learn different ways to write
     }
 
     async createCity(data){
