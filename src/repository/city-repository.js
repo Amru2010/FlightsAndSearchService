@@ -32,11 +32,14 @@ class CityRepository{
 
     async updateCity(cityId,dataObj){
         try {
-            const city= await City.update(dataObj,{
-                where:{
-                    id:cityId
-                }
-            }); 
+            // const city= await City.update(dataObj,{
+            //     where:{
+            //         id:cityId
+            //     }
+            // }); 
+            const city=await City.findByPk(cityId);
+            city.name=dataObj.name;
+            await city.save();
             return city; 
         } catch (err) {
             console.log('Something went wrong at city repository layer');
@@ -48,6 +51,16 @@ class CityRepository{
         try {
             const city=await City.findByPk(cityId); //findByPk special query by sequelize for primary key
             return city;
+        } catch (err) {
+            console.log('Something went wrong at city repository layer');
+            throw{err};
+        }
+    }
+
+    async getAllCities(){
+        try {
+            const cities=await City.findAll(); 
+            return cities;
         } catch (err) {
             console.log('Something went wrong at city repository layer');
             throw{err};

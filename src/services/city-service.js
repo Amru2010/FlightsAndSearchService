@@ -45,6 +45,16 @@ class CityService{ //issue, everytime I'll create city service a new city reposi
         }
     }
 
+    async getAllCities(){
+        try {
+            const cities=await this.cityRepository.getAllCities();
+            return cities;
+        } catch (error) {
+            console.log('Something went wrong at service layer');
+            throw{error};
+        }
+    }
+
 }
 
 module.exports=CityService;
