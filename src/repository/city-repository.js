@@ -10,7 +10,7 @@ class CityRepository{
             return city;
         }
         catch (err){
-            console.log('Something went wrong');
+            console.log('Something went wrong at city repository layer');
             throw{err};
         }
     }
@@ -25,7 +25,7 @@ class CityRepository{
             return true;
         }
         catch (err){
-            console.log('Something went wrong');
+            console.log('Something went wrong at city repository layer');
             throw{err}; //incase deleting city which doesn't exist
         }
     }
@@ -37,9 +37,9 @@ class CityRepository{
                     id:cityId
                 }
             }); 
-            return city;
+            return city; 
         } catch (err) {
-            console.log('Something went wrong');
+            console.log('Something went wrong at city repository layer');
             throw{err};
         }
     }
@@ -49,7 +49,7 @@ class CityRepository{
             const city=await City.findByPk(cityId); //findByPk special query by sequelize for primary key
             return city;
         } catch (err) {
-            console.log('Something went wrong');
+            console.log('Something went wrong at city repository layer');
             throw{err};
         }
     }
