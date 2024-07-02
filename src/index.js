@@ -16,7 +16,7 @@ const setupAndStartServer=async ()=> {
         console.log(`Server Started at port ${PORT}`);
         // console.log(City);
         const repoObj=new CityRepository();
-        // repoObj.createCity({name: "New Delhi"});
+        // repoObj.createCity({name: "New Delhi"}); --> if we want to change name to cityName then we have to destructure it with same name there
         // repoObj.deleteCity(1)
     });
 }
