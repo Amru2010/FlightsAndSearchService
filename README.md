@@ -5,6 +5,7 @@
 - Execute `npm install` on the same path as your root diretory of the download
 - Create the `.env` file in your root directory and add the the following environment variables:
     - `PORT=3000`
+    - `SYNC_DB=true` (inorder to sync the database for association and then remove it later)
 - Inside the `src/config` folder, create a new file `config.json` and add the following piece of json
 
 ```

@@ -3,12 +3,9 @@ const {Op}=require('sequelize');
 const { City }=require('../models/index'); //could have imported simply from city.js but index exports all and we can import from there that is why
 
 class CityRepository{
-    async createCity({name}){ //destructuring on the fly
+    async createCity(arr){ 
         try{
-            const city=await City.create({
-                //name:name -->when you don't write key-value then same value becomes key and value
-                name
-            });
+            const city=await City.bulkCreate(arr); //passing whole array of objects
             return city;
         }
         catch (err){
