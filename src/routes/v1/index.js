@@ -1,19 +1,22 @@
 const express=require('express');
 const cityController=require('../../controllers/city-controller');
 const airportController=require('../../controllers/airport-controller');
+const flightController=require('../../controllers/flight-controller');
 
 const router=express.Router();
 
-router.post("/city",cityController.create); //for api/v1/city
-router.delete("/city/:id",cityController.destroy);
-router.get("/city/:id",cityController.get);
-router.get("/city",cityController.getAll);
-router.patch("/city/:id",cityController.update);
+router.post("/cities",cityController.create); //for api/v1/cities
+router.delete("/cities/:id",cityController.destroy);
+router.get("/cities/:id",cityController.get);
+router.get("/cities",cityController.getAll);
+router.patch("/cities/:id",cityController.update);
 
-router.post("/airport",airportController.create); //for api/v1/airport
-router.delete("/airport/:id",airportController.destroy);
-router.get("/airport/:id",airportController.get);
-router.get("/airport",airportController.getAll);
-router.patch("/airport/:id",airportController.update);
+router.post("/airports",airportController.create); //for api/v1/airports
+router.delete("/airports/:id",airportController.destroy);
+router.get("/airports/:id",airportController.get);
+router.get("/airports",airportController.getAll);
+router.patch("/airports/:id",airportController.update);
+
+router.post("/flights",flightController.create); //for api/v1/flights
 
 module.exports=router;
