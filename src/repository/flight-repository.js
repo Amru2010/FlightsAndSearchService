@@ -31,22 +31,23 @@ class FlightRepository{
         return filter;
     }
 
-    async createFlight(data){
+    async createFlight(data){ 
         try {
             const flight= await Flight.create(data);
             return flight;
         } catch (error) {
-            console.log('Something went wrong at airplane repository layer');
+            console.log('Something went wrong at flight repository layer');
             throw{error};
         }
     }
 
     async getFlight(flightId){
         try {
+            console.log(flightId);
             const flight= await Flight.findByPk(flightId);
             return flight;
         } catch (error) {
-            console.log('Something went wrong at airplane repository layer');
+            console.log('Something went wrong at flight repository layer');
             throw{error};
         }
     }
@@ -59,7 +60,21 @@ class FlightRepository{
             });
             return flight;
         } catch (error) {
-            console.log('Something went wrong at airplane repository layer');
+            console.log('Something went wrong at flight repository layer');
+            throw{error};
+        }
+    }
+
+    async updateFlight(flightId,data){
+        try {
+            await Flight.update(data,{
+                where:{
+                    id:flightId,
+                }
+            });
+            return true;
+        } catch (error) {
+            console.log('Something went wrong at flight repository layer');
             throw{error};
         }
     }
